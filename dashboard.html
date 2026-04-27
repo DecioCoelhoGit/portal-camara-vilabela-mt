@@ -1,1 +1,200 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+  <title>Dashboard | Câmara Municipal de Vila Bela da Santíssima Trindade – MT</title>
+  <meta name="description" content="Dashboard legislativo inicial do Portal da Câmara Municipal de Vila Bela da Santíssima Trindade – MT." />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <!-- =====================================================
+       INÍCIO BLOCO 01 — LAYOUT DASHBOARD
+  ====================================================== -->
+  <div class="dashboard-layout">
+
+    <aside class="sidebar">
+      <h2>Dashboard Câmara</h2>
+      <a href="index.html">← Voltar ao Portal</a>
+      <a href="dashboard.html">Visão Geral</a>
+      <a href="vereadores.html">Vereadores</a>
+      <a href="sessoes.html">Sessões</a>
+      <a href="projetos.html">Projetos</a>
+      <a href="transparencia.html">Transparência</a>
+      <a href="admin.html">Admin</a>
+    </aside>
+
+    <main class="dashboard-main">
+
+      <!-- =====================================================
+           INÍCIO BLOCO 02 — CABEÇALHO
+      ====================================================== -->
+      <section style="padding:0 0 35px;">
+        <span class="badge">Painel Inteligente</span>
+        <h1 class="titulo-secao">Dashboard Legislativo</h1>
+        <p class="subtitulo-secao">
+          Visão consolidada dos principais indicadores legislativos, administrativos e de transparência
+          da Câmara Municipal de Vila Bela da Santíssima Trindade – MT.
+        </p>
+      </section>
+      <!-- FIM BLOCO 02 -->
+
+
+      <!-- =====================================================
+           INÍCIO BLOCO 03 — KPIs PRINCIPAIS
+      ====================================================== -->
+      <section style="padding:0 0 35px;">
+        <div class="kpi-grid">
+          <div class="kpi-card">
+            <span>Vereadores</span>
+            <strong>09</strong>
+          </div>
+
+          <div class="kpi-card">
+            <span>Projetos</span>
+            <strong>24</strong>
+          </div>
+
+          <div class="kpi-card">
+            <span>Sessões</span>
+            <strong>12</strong>
+          </div>
+
+          <div class="kpi-card">
+            <span>Transparência</span>
+            <strong>38</strong>
+          </div>
+        </div>
+      </section>
+      <!-- FIM BLOCO 03 -->
+
+
+      <!-- =====================================================
+           INÍCIO BLOCO 04 — PAINÉIS DE ANÁLISE
+      ====================================================== -->
+      <section style="padding:0 0 35px;">
+        <h2 class="titulo-secao">Indicadores por Área</h2>
+
+        <div class="grid grid-3">
+
+          <div class="card">
+            <h3>📄 Projetos Legislativos</h3>
+            <p>Projetos de lei, requerimentos, indicações e moções registrados no sistema.</p>
+            <div class="mt-20">
+              <span class="badge">24 registros</span>
+            </div>
+          </div>
+
+          <div class="card">
+            <h3>📅 Sessões</h3>
+            <p>Sessões ordinárias, extraordinárias e solenes cadastradas para acompanhamento público.</p>
+            <div class="mt-20">
+              <span class="badge">12 sessões</span>
+            </div>
+          </div>
+
+          <div class="card">
+            <h3>🔎 Transparência</h3>
+            <p>Documentos administrativos, contratos, relatórios e atos oficiais disponíveis.</p>
+            <div class="mt-20">
+              <span class="badge">38 documentos</span>
+            </div>
+          </div>
+
+        </div>
+      </section>
+      <!-- FIM BLOCO 04 -->
+
+
+      <!-- =====================================================
+           INÍCIO BLOCO 05 — TABELA RESUMO
+      ====================================================== -->
+      <section style="padding:0 0 35px;">
+        <h2 class="titulo-secao">Resumo Operacional</h2>
+        <p class="subtitulo-secao">
+          Tabela inicial para acompanhamento dos módulos do portal.
+        </p>
+
+        <div class="tabela-wrapper">
+          <table>
+            <thead>
+              <tr>
+                <th>Módulo</th>
+                <th>Registros</th>
+                <th>Status</th>
+                <th>Integração</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <td>Vereadores</td>
+                <td>09</td>
+                <td>Estrutura criada</td>
+                <td>Pronto para Firebase</td>
+              </tr>
+
+              <tr>
+                <td>Sessões</td>
+                <td>12</td>
+                <td>Modelo publicado</td>
+                <td>Pronto para Firebase</td>
+              </tr>
+
+              <tr>
+                <td>Projetos</td>
+                <td>24</td>
+                <td>Modelo publicado</td>
+                <td>Pronto para Firebase</td>
+              </tr>
+
+              <tr>
+                <td>Transparência</td>
+                <td>38</td>
+                <td>Modelo publicado</td>
+                <td>Pronto para arquivos/PDF</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+      <!-- FIM BLOCO 05 -->
+
+
+      <!-- =====================================================
+           INÍCIO BLOCO 06 — ROADMAP DO SISTEMA
+      ====================================================== -->
+      <section style="padding:0;">
+        <h2 class="titulo-secao">Roadmap Técnico</h2>
+
+        <div class="grid grid-3">
+
+          <div class="card">
+            <h3>✅ Fase 1</h3>
+            <p>Estrutura HTML + CSS institucional premium, com páginas públicas e área administrativa inicial.</p>
+          </div>
+
+          <div class="card">
+            <h3>🔄 Fase 2</h3>
+            <p>Criação dos seeds, integração com JavaScript, dados simulados e filtros internos.</p>
+          </div>
+
+          <div class="card">
+            <h3>🚀 Fase 3</h3>
+            <p>Firebase, login administrativo, banco de dados real, dashboard dinâmico e publicação final.</p>
+          </div>
+
+        </div>
+      </section>
+      <!-- FIM BLOCO 06 -->
+
+    </main>
+  </div>
+  <!-- FIM BLOCO 01 -->
+
+</body>
+</html>
