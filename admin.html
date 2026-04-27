@@ -1,1 +1,170 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+  <title>Admin | Câmara Municipal de Vila Bela da Santíssima Trindade – MT</title>
+  <meta name="description" content="Painel administrativo inicial do Portal da Câmara Municipal de Vila Bela da Santíssima Trindade – MT." />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <!-- =====================================================
+       INÍCIO BLOCO 01 — LAYOUT ADMIN
+  ====================================================== -->
+  <div class="dashboard-layout">
+
+    <aside class="sidebar">
+      <h2>Admin Câmara</h2>
+      <a href="index.html">← Voltar ao Portal</a>
+      <a href="dashboard.html">Dashboard</a>
+      <a href="admin.html">Painel Admin</a>
+      <a href="seed-vereadores.html">Seed Vereadores</a>
+      <a href="seed-projetos.html">Seed Projetos</a>
+    </aside>
+
+    <main class="dashboard-main">
+
+      <!-- =====================================================
+           INÍCIO BLOCO 02 — CABEÇALHO ADMIN
+      ====================================================== -->
+      <section style="padding:0 0 35px;">
+        <span class="badge">Área Administrativa</span>
+        <h1 class="titulo-secao">Painel de Gestão do Portal</h1>
+        <p class="subtitulo-secao">
+          Ambiente inicial para cadastro, organização e atualização de conteúdos legislativos.
+          Preparado para futura integração com Firebase, autenticação e banco de dados.
+        </p>
+      </section>
+      <!-- FIM BLOCO 02 -->
+
+
+      <!-- =====================================================
+           INÍCIO BLOCO 03 — INDICADORES
+      ====================================================== -->
+      <section style="padding:0 0 35px;">
+        <div class="kpi-grid">
+          <div class="kpi-card">
+            <span>Vereadores</span>
+            <strong>09</strong>
+          </div>
+
+          <div class="kpi-card">
+            <span>Projetos</span>
+            <strong>24</strong>
+          </div>
+
+          <div class="kpi-card">
+            <span>Sessões</span>
+            <strong>12</strong>
+          </div>
+
+          <div class="kpi-card">
+            <span>Documentos</span>
+            <strong>38</strong>
+          </div>
+        </div>
+      </section>
+      <!-- FIM BLOCO 03 -->
+
+
+      <!-- =====================================================
+           INÍCIO BLOCO 04 — FORMULÁRIO DE CONTEÚDO
+      ====================================================== -->
+      <section style="padding:0 0 45px;">
+        <h2 class="titulo-secao">Cadastro Rápido</h2>
+        <p class="subtitulo-secao">
+          Modelo visual para inserção de conteúdos. Nesta fase, o formulário é demonstrativo.
+        </p>
+
+        <div class="form-box">
+          <form>
+
+            <div class="form-group">
+              <label for="tipo">Tipo de Registro</label>
+              <select id="tipo" name="tipo">
+                <option>Vereador</option>
+                <option>Projeto Legislativo</option>
+                <option>Sessão</option>
+                <option>Documento de Transparência</option>
+                <option>Ato Oficial</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="titulo">Título / Nome</label>
+              <input type="text" id="titulo" name="titulo" placeholder="Ex: Projeto de Lei nº 001/2026" />
+            </div>
+
+            <div class="form-group">
+              <label for="categoria">Categoria</label>
+              <input type="text" id="categoria" name="categoria" placeholder="Ex: Projeto de Lei, Contrato, Sessão Ordinária" />
+            </div>
+
+            <div class="form-group">
+              <label for="data">Data</label>
+              <input type="date" id="data" name="data" />
+            </div>
+
+            <div class="form-group">
+              <label for="status">Situação</label>
+              <select id="status" name="status">
+                <option>Em tramitação</option>
+                <option>Aprovado</option>
+                <option>Publicado</option>
+                <option>Encaminhado</option>
+                <option>Em atualização</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="descricao">Descrição</label>
+              <textarea id="descricao" name="descricao" placeholder="Digite um resumo institucional do conteúdo..."></textarea>
+            </div>
+
+            <button type="button" class="btn btn-primary">
+              Salvar Registro Demonstrativo
+            </button>
+
+          </form>
+        </div>
+      </section>
+      <!-- FIM BLOCO 04 -->
+
+
+      <!-- =====================================================
+           INÍCIO BLOCO 05 — AÇÕES RÁPIDAS
+      ====================================================== -->
+      <section style="padding:0;">
+        <h2 class="titulo-secao">Ações Rápidas</h2>
+
+        <div class="grid grid-3">
+
+          <a href="seed-vereadores.html" class="card">
+            <h3>👥 Dados de Vereadores</h3>
+            <p>Abrir estrutura demonstrativa para vereadores e mesa diretora.</p>
+          </a>
+
+          <a href="seed-projetos.html" class="card">
+            <h3>📄 Dados de Projetos</h3>
+            <p>Abrir estrutura demonstrativa para projetos, indicações e requerimentos.</p>
+          </a>
+
+          <a href="dashboard.html" class="card">
+            <h3>📊 Dashboard</h3>
+            <p>Visualizar indicadores gerais do portal legislativo.</p>
+          </a>
+
+        </div>
+      </section>
+      <!-- FIM BLOCO 05 -->
+
+    </main>
+  </div>
+  <!-- FIM BLOCO 01 -->
+
+</body>
+</html>
