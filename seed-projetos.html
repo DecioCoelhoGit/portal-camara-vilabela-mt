@@ -1,1 +1,152 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+  <title>Seed Projetos | Câmara Municipal de Vila Bela da Santíssima Trindade – MT</title>
+  <meta name="description" content="Base demonstrativa de projetos legislativos para o Portal da Câmara Municipal de Vila Bela da Santíssima Trindade – MT." />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <!-- =====================================================
+       INÍCIO BLOCO 01 — LAYOUT
+  ====================================================== -->
+  <div class="dashboard-layout">
+
+    <aside class="sidebar">
+      <h2>Seed Projetos</h2>
+      <a href="index.html">← Voltar ao Portal</a>
+      <a href="admin.html">Admin</a>
+      <a href="dashboard.html">Dashboard</a>
+      <a href="seed-vereadores.html">Seed Vereadores</a>
+    </aside>
+
+    <main class="dashboard-main">
+
+      <!-- =====================================================
+           INÍCIO BLOCO 02 — CABEÇALHO
+      ====================================================== -->
+      <section style="padding:0 0 35px;">
+        <span class="badge">Base Demonstrativa</span>
+        <h1 class="titulo-secao">Seed de Projetos Legislativos</h1>
+        <p class="subtitulo-secao">
+          Estrutura inicial para organização de projetos, indicações, requerimentos e demais matérias legislativas.
+          Preparado para futura integração com banco de dados (Firebase).
+        </p>
+      </section>
+      <!-- FIM BLOCO 02 -->
+
+
+      <!-- =====================================================
+           INÍCIO BLOCO 03 — TABELA DE PROJETOS
+      ====================================================== -->
+      <section style="padding:0 0 35px;">
+        <div class="tabela-wrapper">
+          <table>
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Número</th>
+                <th>Tipo</th>
+                <th>Autor</th>
+                <th>Data</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <td>01</td>
+                <td>PL 001/2026</td>
+                <td>Projeto de Lei</td>
+                <td>Poder Legislativo</td>
+                <td>10/02/2026</td>
+                <td>Em tramitação</td>
+              </tr>
+
+              <tr>
+                <td>02</td>
+                <td>IND 004/2026</td>
+                <td>Indicação</td>
+                <td>Vereador(a)</td>
+                <td>14/02/2026</td>
+                <td>Encaminhada</td>
+              </tr>
+
+              <tr>
+                <td>03</td>
+                <td>REQ 003/2026</td>
+                <td>Requerimento</td>
+                <td>Bancada Legislativa</td>
+                <td>18/02/2026</td>
+                <td>Aguardando resposta</td>
+              </tr>
+
+              <tr>
+                <td>04</td>
+                <td>MOÇ 002/2026</td>
+                <td>Moção</td>
+                <td>Mesa Diretora</td>
+                <td>22/02/2026</td>
+                <td>Aprovada</td>
+              </tr>
+
+              <tr>
+                <td>05</td>
+                <td>PL 005/2026</td>
+                <td>Projeto de Lei</td>
+                <td>Comissão Permanente</td>
+                <td>26/02/2026</td>
+                <td>Análise em comissão</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+      <!-- FIM BLOCO 03 -->
+
+
+      <!-- =====================================================
+           INÍCIO BLOCO 04 — MODELO JSON
+      ====================================================== -->
+      <section style="padding:0;">
+        <h2 class="titulo-secao">Modelo JSON Futuro</h2>
+
+        <div class="card">
+<pre style="white-space:pre-wrap; font-size:0.9rem;">
+[
+  {
+    "id": 1,
+    "numero": "PL 001/2026",
+    "tipo": "Projeto de Lei",
+    "autor": "Poder Legislativo",
+    "data": "2026-02-10",
+    "status": "em_tramitacao",
+    "descricao": "Dispõe sobre modernização digital e transparência legislativa."
+  },
+  {
+    "id": 2,
+    "numero": "IND 004/2026",
+    "tipo": "Indicação",
+    "autor": "Vereador(a)",
+    "data": "2026-02-14",
+    "status": "encaminhada",
+    "descricao": "Sugere melhorias na infraestrutura urbana."
+  }
+]
+</pre>
+        </div>
+      </section>
+      <!-- FIM BLOCO 04 -->
+
+    </main>
+
+  </div>
+  <!-- FIM BLOCO 01 -->
+
+</body>
+</html>
