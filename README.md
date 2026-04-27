@@ -1,2 +1,19 @@
-# portal-camara-vilabela-mt
-Portal institucional da Câmara de Vila Bela da Santíssima Trindade-MT, com foco em transparência, gestão legislativa e acesso público à informação. Inclui páginas de vereadores, sessões, projetos, painel administrativo e dashboard interativo, integrando dados, comunicação e controle social em ambiente moderno e responsivo.
+# 🏛️ Portal Câmara Municipal de Vila Bela da Santíssima Trindade – MT
+
+Plataforma digital institucional desenvolvida para modernizar, organizar e dar transparência às atividades legislativas da Câmara Municipal de Vila Bela da Santíssima Trindade – MT, a 1ª Capital do Estado de Mato Grosso.
+
+---
+
+## 🎯 Objetivo
+
+Oferecer um ambiente digital moderno, acessível e responsivo que permita:
+
+- Acesso público às informações legislativas  
+- Transparência dos atos administrativos  
+- Acompanhamento de sessões e projetos  
+- Gestão interna eficiente  
+- Integração com dados e dashboards  
+
+---
+
+## 🧩 Estrutura do Projeto
