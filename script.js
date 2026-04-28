@@ -1,5 +1,5 @@
 /* =========================================================
-   INÍCIO BLOCO 01 — CONFIGURAÇÃO GLOBAL
+   SCRIPT.JS V2 — FILTROS + RESET + EXPORTAR JSON
 ========================================================= */
 
 const STORAGE_KEYS = {
@@ -9,96 +9,28 @@ const STORAGE_KEYS = {
   documentos: "camara_documentos"
 };
 
-/* FIM BLOCO 01 */
-
-
-/* =========================================================
-   INÍCIO BLOCO 02 — DADOS INICIAIS
-========================================================= */
-
 const vereadoresSeed = [
-  {
-    id: 1,
-    nome: "Nome do Vereador",
-    cargo: "Presidente",
-    partido: "Partido",
-    foto: "imagens/vereador-placeholder.png",
-    descricao: "Atuação parlamentar voltada à representação popular e transparência."
-  },
-  {
-    id: 2,
-    nome: "Nome da Vereadora",
-    cargo: "Vice-Presidente",
-    partido: "Partido",
-    foto: "imagens/vereador-placeholder.png",
-    descricao: "Participação em pautas legislativas e ações institucionais."
-  }
+  { id: 1, nome: "Nome do Vereador", cargo: "Presidente", partido: "Partido", foto: "imagens/vereador-placeholder.png", descricao: "Atuação parlamentar voltada à representação popular e transparência." },
+  { id: 2, nome: "Nome da Vereadora", cargo: "Vice-Presidente", partido: "Partido", foto: "imagens/vereador-placeholder.png", descricao: "Participação em pautas legislativas e ações institucionais." }
 ];
 
 const projetosSeed = [
-  {
-    id: 1,
-    numero: "PL 001/2026",
-    tipo: "Projeto de Lei",
-    autor: "Poder Legislativo",
-    data: "2026-02-10",
-    status: "Em tramitação",
-    descricao: "Dispõe sobre modernização digital e transparência legislativa."
-  },
-  {
-    id: 2,
-    numero: "IND 004/2026",
-    tipo: "Indicação",
-    autor: "Vereador(a)",
-    data: "2026-02-14",
-    status: "Encaminhada",
-    descricao: "Sugere melhorias na infraestrutura urbana municipal."
-  }
+  { id: 1, numero: "PL 001/2026", tipo: "Projeto de Lei", autor: "Poder Legislativo", data: "2026-02-10", status: "Em tramitação", descricao: "Dispõe sobre modernização digital e transparência legislativa." },
+  { id: 2, numero: "IND 004/2026", tipo: "Indicação", autor: "Vereador(a)", data: "2026-02-14", status: "Encaminhada", descricao: "Sugere melhorias na infraestrutura urbana municipal." }
 ];
 
 const sessoesSeed = [
-  {
-    id: 1,
-    titulo: "1ª Sessão Ordinária de 2026",
-    tipo: "Ordinária",
-    data: "2026-02-05",
-    status: "Ata publicada",
-    descricao: "Abertura dos trabalhos legislativos e leitura do expediente."
-  },
-  {
-    id: 2,
-    titulo: "1ª Sessão Extraordinária de 2026",
-    tipo: "Extraordinária",
-    data: "2026-02-18",
-    status: "Documentos em organização",
-    descricao: "Sessão convocada para apreciação de pauta específica."
-  }
+  { id: 1, titulo: "1ª Sessão Ordinária de 2026", tipo: "Ordinária", data: "2026-02-05", status: "Ata publicada", descricao: "Abertura dos trabalhos legislativos e leitura do expediente." },
+  { id: 2, titulo: "1ª Sessão Extraordinária de 2026", tipo: "Extraordinária", data: "2026-02-18", status: "Documentos em organização", descricao: "Sessão convocada para apreciação de pauta específica." }
 ];
 
 const documentosSeed = [
-  {
-    id: 1,
-    data: "2026-02-05",
-    categoria: "Relatório",
-    titulo: "Relatório Mensal de Gestão Legislativa",
-    status: "Publicado",
-    acesso: "PDF"
-  },
-  {
-    id: 2,
-    data: "2026-02-10",
-    categoria: "Contrato",
-    titulo: "Contrato Administrativo nº 001/2026",
-    status: "Publicado",
-    acesso: "PDF"
-  }
+  { id: 1, data: "2026-02-05", categoria: "Relatório", titulo: "Relatório Mensal de Gestão Legislativa", status: "Publicado", acesso: "PDF" },
+  { id: 2, data: "2026-02-10", categoria: "Contrato", titulo: "Contrato Administrativo nº 001/2026", status: "Publicado", acesso: "PDF" }
 ];
 
-/* FIM BLOCO 02 */
-
-
 /* =========================================================
-   INÍCIO BLOCO 03 — LOCAL STORAGE
+   LOCAL STORAGE
 ========================================================= */
 
 function salvarDados(chave, dados) {
@@ -116,63 +48,60 @@ function carregarDados(chave, seed) {
   return JSON.parse(dados);
 }
 
-function resetarBase() {
-  salvarDados(STORAGE_KEYS.vereadores, vereadoresSeed);
-  salvarDados(STORAGE_KEYS.projetos, projetosSeed);
-  salvarDados(STORAGE_KEYS.sessoes, sessoesSeed);
-  salvarDados(STORAGE_KEYS.documentos, documentosSeed);
-
-  alert("Base demonstrativa restaurada com sucesso.");
-  location.reload();
-}
-
-/* FIM BLOCO 03 */
-
-
 /* =========================================================
-   INÍCIO BLOCO 04 — FORMATADORES
+   FORMATADORES
 ========================================================= */
 
 function formatarData(dataISO) {
   if (!dataISO) return "-";
-
   const partes = dataISO.split("-");
   return `${partes[2]}/${partes[1]}/${partes[0]}`;
 }
 
 function classeStatus(status) {
-  const texto = status.toLowerCase();
+  const texto = String(status).toLowerCase();
 
-  if (
-    texto.includes("aprov") ||
-    texto.includes("public") ||
-    texto.includes("encaminh")
-  ) {
+  if (texto.includes("aprov") || texto.includes("public") || texto.includes("encaminh")) {
     return "aprovado";
   }
 
-  if (
-    texto.includes("rejeit") ||
-    texto.includes("cancel")
-  ) {
+  if (texto.includes("rejeit") || texto.includes("cancel")) {
     return "rejeitado";
   }
 
   return "andamento";
 }
 
-/* FIM BLOCO 04 */
-
+function normalizar(texto) {
+  return String(texto || "").toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+}
 
 /* =========================================================
-   INÍCIO BLOCO 05 — RENDER VEREADORES
+   FILTRO GENÉRICO
+========================================================= */
+
+function filtrarLista(lista, termo, campos) {
+  const busca = normalizar(termo);
+
+  if (!busca) return lista;
+
+  return lista.filter(item =>
+    campos.some(campo => normalizar(item[campo]).includes(busca))
+  );
+}
+
+/* =========================================================
+   RENDER VEREADORES
 ========================================================= */
 
 function renderVereadores(containerId = "lista-vereadores") {
   const container = document.getElementById(containerId);
   if (!container) return;
 
-  const vereadores = carregarDados(STORAGE_KEYS.vereadores, vereadoresSeed);
+  const termo = document.getElementById("filtro-vereadores")?.value || "";
+  let vereadores = carregarDados(STORAGE_KEYS.vereadores, vereadoresSeed);
+
+  vereadores = filtrarLista(vereadores, termo, ["nome", "cargo", "partido", "descricao"]);
 
   container.innerHTML = vereadores.map(v => `
     <div class="card vereador-card">
@@ -182,21 +111,21 @@ function renderVereadores(containerId = "lista-vereadores") {
       <p class="partido">${v.partido}</p>
       <p class="mt-20">${v.descricao}</p>
     </div>
-  `).join("");
+  `).join("") || `<div class="card"><p>Nenhum vereador encontrado.</p></div>`;
 }
 
-/* FIM BLOCO 05 */
-
-
 /* =========================================================
-   INÍCIO BLOCO 06 — RENDER PROJETOS
+   RENDER PROJETOS
 ========================================================= */
 
 function renderProjetos(containerId = "lista-projetos") {
   const container = document.getElementById(containerId);
   if (!container) return;
 
-  const projetos = carregarDados(STORAGE_KEYS.projetos, projetosSeed);
+  const termo = document.getElementById("filtro-projetos")?.value || "";
+  let projetos = carregarDados(STORAGE_KEYS.projetos, projetosSeed);
+
+  projetos = filtrarLista(projetos, termo, ["numero", "tipo", "autor", "status", "descricao"]);
 
   container.innerHTML = projetos.map(p => `
     <div class="item-legislativo">
@@ -209,21 +138,21 @@ function renderProjetos(containerId = "lista-projetos") {
         <span class="status ${classeStatus(p.status)}">${p.status}</span>
       </div>
     </div>
-  `).join("");
+  `).join("") || `<div class="card"><p>Nenhum projeto encontrado.</p></div>`;
 }
 
-/* FIM BLOCO 06 */
-
-
 /* =========================================================
-   INÍCIO BLOCO 07 — RENDER SESSÕES
+   RENDER SESSÕES
 ========================================================= */
 
 function renderSessoes(containerId = "lista-sessoes") {
   const container = document.getElementById(containerId);
   if (!container) return;
 
-  const sessoes = carregarDados(STORAGE_KEYS.sessoes, sessoesSeed);
+  const termo = document.getElementById("filtro-sessoes")?.value || "";
+  let sessoes = carregarDados(STORAGE_KEYS.sessoes, sessoesSeed);
+
+  sessoes = filtrarLista(sessoes, termo, ["titulo", "tipo", "status", "descricao"]);
 
   container.innerHTML = sessoes.map(s => `
     <div class="item-legislativo">
@@ -236,21 +165,21 @@ function renderSessoes(containerId = "lista-sessoes") {
         <span class="status ${classeStatus(s.status)}">${s.status}</span>
       </div>
     </div>
-  `).join("");
+  `).join("") || `<div class="card"><p>Nenhuma sessão encontrada.</p></div>`;
 }
 
-/* FIM BLOCO 07 */
-
-
 /* =========================================================
-   INÍCIO BLOCO 08 — RENDER DOCUMENTOS
+   RENDER DOCUMENTOS
 ========================================================= */
 
 function renderDocumentosTabela(containerId = "tabela-documentos") {
   const tbody = document.getElementById(containerId);
   if (!tbody) return;
 
-  const documentos = carregarDados(STORAGE_KEYS.documentos, documentosSeed);
+  const termo = document.getElementById("filtro-documentos")?.value || "";
+  let documentos = carregarDados(STORAGE_KEYS.documentos, documentosSeed);
+
+  documentos = filtrarLista(documentos, termo, ["categoria", "titulo", "status", "acesso"]);
 
   tbody.innerHTML = documentos.map(d => `
     <tr>
@@ -260,14 +189,15 @@ function renderDocumentosTabela(containerId = "tabela-documentos") {
       <td>${d.status}</td>
       <td>${d.acesso}</td>
     </tr>
-  `).join("");
+  `).join("") || `
+    <tr>
+      <td colspan="5">Nenhum documento encontrado.</td>
+    </tr>
+  `;
 }
 
-/* FIM BLOCO 08 */
-
-
 /* =========================================================
-   INÍCIO BLOCO 09 — DASHBOARD
+   DASHBOARD
 ========================================================= */
 
 function renderDashboard() {
@@ -287,11 +217,8 @@ function atualizarTexto(id, valor) {
   if (elemento) elemento.textContent = valor;
 }
 
-/* FIM BLOCO 09 */
-
-
 /* =========================================================
-   INÍCIO BLOCO 10 — FORMULÁRIO ADMIN DEMONSTRATIVO
+   FORMULÁRIO ADMIN
 ========================================================= */
 
 function iniciarFormularioAdmin() {
@@ -317,7 +244,7 @@ function iniciarFormularioAdmin() {
       const projetos = carregarDados(STORAGE_KEYS.projetos, projetosSeed);
 
       projetos.push({
-        id: projetos.length + 1,
+        id: Date.now(),
         numero: titulo,
         tipo: categoria || "Projeto Legislativo",
         autor: "Admin",
@@ -333,7 +260,7 @@ function iniciarFormularioAdmin() {
       const sessoes = carregarDados(STORAGE_KEYS.sessoes, sessoesSeed);
 
       sessoes.push({
-        id: sessoes.length + 1,
+        id: Date.now(),
         titulo,
         tipo: categoria || "Sessão",
         data,
@@ -348,9 +275,9 @@ function iniciarFormularioAdmin() {
       const documentos = carregarDados(STORAGE_KEYS.documentos, documentosSeed);
 
       documentos.push({
-        id: documentos.length + 1,
+        id: Date.now(),
         data,
-        categoria,
+        categoria: categoria || tipo,
         titulo,
         status,
         acesso: "PDF"
@@ -359,16 +286,90 @@ function iniciarFormularioAdmin() {
       salvarDados(STORAGE_KEYS.documentos, documentos);
     }
 
-    alert("Registro salvo no LocalStorage com sucesso.");
+    alert("Registro salvo com sucesso no LocalStorage.");
     form.reset();
+    renderTudo();
   });
 }
 
-/* FIM BLOCO 10 */
+/* =========================================================
+   RESET DA BASE
+========================================================= */
 
+function resetarBase() {
+  const confirmar = confirm("Deseja restaurar a base demonstrativa inicial? Os dados salvos no navegador serão substituídos.");
+
+  if (!confirmar) return;
+
+  salvarDados(STORAGE_KEYS.vereadores, vereadoresSeed);
+  salvarDados(STORAGE_KEYS.projetos, projetosSeed);
+  salvarDados(STORAGE_KEYS.sessoes, sessoesSeed);
+  salvarDados(STORAGE_KEYS.documentos, documentosSeed);
+
+  alert("Base restaurada com sucesso.");
+  location.reload();
+}
 
 /* =========================================================
-   INÍCIO BLOCO 11 — INICIALIZAÇÃO AUTOMÁTICA
+   EXPORTAR JSON
+========================================================= */
+
+function exportarJSON() {
+  const pacote = {
+    vereadores: carregarDados(STORAGE_KEYS.vereadores, vereadoresSeed),
+    projetos: carregarDados(STORAGE_KEYS.projetos, projetosSeed),
+    sessoes: carregarDados(STORAGE_KEYS.sessoes, sessoesSeed),
+    documentos: carregarDados(STORAGE_KEYS.documentos, documentosSeed),
+    exportado_em: new Date().toISOString(),
+    projeto: "portal-camara-vilabela-mt"
+  };
+
+  const blob = new Blob([JSON.stringify(pacote, null, 2)], {
+    type: "application/json"
+  });
+
+  const url = URL.createObjectURL(blob);
+  const link = document.createElement("a");
+
+  link.href = url;
+  link.download = "backup-portal-camara-vilabela-mt.json";
+  link.click();
+
+  URL.revokeObjectURL(url);
+}
+
+/* =========================================================
+   FILTROS — EVENTOS
+========================================================= */
+
+function iniciarFiltros() {
+  const filtros = [
+    { id: "filtro-vereadores", render: renderVereadores },
+    { id: "filtro-projetos", render: renderProjetos },
+    { id: "filtro-sessoes", render: renderSessoes },
+    { id: "filtro-documentos", render: renderDocumentosTabela }
+  ];
+
+  filtros.forEach(item => {
+    const campo = document.getElementById(item.id);
+    if (campo) campo.addEventListener("input", item.render);
+  });
+}
+
+/* =========================================================
+   RENDER GERAL
+========================================================= */
+
+function renderTudo() {
+  renderVereadores();
+  renderProjetos();
+  renderSessoes();
+  renderDocumentosTabela();
+  renderDashboard();
+}
+
+/* =========================================================
+   INICIALIZAÇÃO
 ========================================================= */
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -377,17 +378,11 @@ document.addEventListener("DOMContentLoaded", function () {
   carregarDados(STORAGE_KEYS.sessoes, sessoesSeed);
   carregarDados(STORAGE_KEYS.documentos, documentosSeed);
 
-  renderVereadores();
-  renderProjetos();
-  renderSessoes();
-  renderDocumentosTabela();
-  renderDashboard();
+  renderTudo();
   iniciarFormularioAdmin();
+  iniciarFiltros();
 });
 
-/* FIM BLOCO 11 */
-
-
 /* =========================================================
-   FIM DO ARQUIVO SCRIPT.JS V1
+   FIM DO SCRIPT.JS V2
 ========================================================= */
