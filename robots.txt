@@ -1,1 +1,5 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://DecioCoelhoGit.github.io/portal-camara-vilabela-mt/sitemap.xml0
 
