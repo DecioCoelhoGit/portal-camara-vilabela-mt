@@ -1433,3 +1433,310 @@ FIM V4 DASHBOARD REAL
 ========================================================= */
 0
 
+/* =========================================================
+   V5 CINEMA MASTER — GOVTECH PREMIUM
+========================================================= */
+
+/* FUNDO CINEMATOGRÁFICO */
+
+body{
+    background:
+    linear-gradient(
+        180deg,
+        #021427 0%,
+        #041d36 40%,
+        #03101d 100%
+    );
+    background-attachment: fixed;
+    overflow-x:hidden;
+}
+
+/* PARTÍCULAS */
+
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    background-image:
+    radial-gradient(rgba(255,255,255,.08) 1px, transparent 1px);
+    background-size:30px 30px;
+    opacity:.25;
+    pointer-events:none;
+    z-index:-1;
+}
+
+/* HEADER HOLOGRÁFICO */
+
+header{
+    position:sticky;
+    top:0;
+    z-index:999;
+    backdrop-filter:blur(16px);
+    -webkit-backdrop-filter:blur(16px);
+
+    background:rgba(1,16,32,.78);
+
+    border-bottom:
+    1px solid rgba(255,215,0,.18);
+
+    box-shadow:
+    0 10px 30px rgba(0,0,0,.45);
+}
+
+/* LOGO */
+
+header img{
+    width:52px;
+    height:52px;
+    object-fit:contain;
+
+    filter:
+    drop-shadow(0 0 10px rgba(255,215,0,.45));
+}
+
+/* HERO */
+
+.hero{
+    position:relative;
+
+    overflow:hidden;
+
+    border-radius:0 0 28px 28px;
+
+    background:
+    linear-gradient(
+        135deg,
+        rgba(3,28,55,.95),
+        rgba(5,20,38,.96)
+    );
+}
+
+/* GLOW */
+
+.hero::before{
+    content:"";
+
+    position:absolute;
+
+    width:500px;
+    height:500px;
+
+    background:
+    radial-gradient(
+        circle,
+        rgba(255,215,0,.10),
+        transparent 70%
+    );
+
+    top:-200px;
+    right:-150px;
+
+    pointer-events:none;
+}
+
+/* TÍTULO */
+
+.hero h1{
+    font-size:2.2rem;
+    line-height:1.1;
+
+    color:#ffffff;
+
+    text-shadow:
+    0 4px 18px rgba(0,0,0,.45);
+}
+
+/* SUBTEXTO */
+
+.hero p{
+    color:#dbe8f6;
+    line-height:1.7;
+}
+
+/* BOTÕES */
+
+.btn,
+button{
+    background:
+    linear-gradient(
+        135deg,
+        #c89b2d,
+        #f1d06b
+    );
+
+    border:none;
+
+    color:#071421;
+
+    font-weight:700;
+
+    border-radius:18px;
+
+    box-shadow:
+    0 10px 25px rgba(0,0,0,.35);
+
+    transition:.35s ease;
+}
+
+/* HOVER */
+
+.btn:hover,
+button:hover{
+    transform:
+    translateY(-3px)
+    scale(1.02);
+
+    box-shadow:
+    0 18px 35px rgba(0,0,0,.45);
+}
+
+/* CARDS */
+
+.card,
+.stat-card,
+.dashboard-card{
+    background:
+    linear-gradient(
+        180deg,
+        rgba(255,255,255,.96),
+        rgba(248,249,251,.93)
+    );
+
+    border:
+    1px solid rgba(255,255,255,.4);
+
+    border-radius:24px;
+
+    box-shadow:
+    0 14px 35px rgba(0,0,0,.18);
+
+    transition:.4s ease;
+
+    overflow:hidden;
+
+    position:relative;
+}
+
+/* EFEITO HOLOGRÁFICO */
+
+.card::before,
+.stat-card::before,
+.dashboard-card::before{
+    content:"";
+
+    position:absolute;
+    inset:0;
+
+    background:
+    linear-gradient(
+        120deg,
+        transparent,
+        rgba(255,255,255,.25),
+        transparent
+    );
+
+    transform:translateX(-100%);
+    transition:1s;
+}
+
+/* HOVER */
+
+.card:hover::before,
+.stat-card:hover::before,
+.dashboard-card:hover::before{
+    transform:translateX(100%);
+}
+
+.card:hover,
+.stat-card:hover,
+.dashboard-card:hover{
+    transform:
+    translateY(-8px);
+
+    box-shadow:
+    0 24px 45px rgba(0,0,0,.24);
+}
+
+/* NÚMEROS */
+
+.stat-number{
+    font-size:2rem;
+    font-weight:800;
+    color:#0b2b4b;
+}
+
+/* TÍTULOS */
+
+.section-title{
+    color:#ffffff;
+    font-size:2rem;
+    text-shadow:
+    0 4px 16px rgba(0,0,0,.35);
+}
+
+/* TABELAS */
+
+table{
+    overflow:hidden;
+    border-radius:18px;
+}
+
+/* RODAPÉ */
+
+footer{
+    background:
+    linear-gradient(
+        180deg,
+        #03101d,
+        #020b16
+    );
+
+    border-top:
+    1px solid rgba(255,215,0,.15);
+}
+
+/* LINKS */
+
+footer a{
+    color:#c9dfff;
+}
+
+footer a:hover{
+    color:#f3d36d;
+}
+
+/* ANIMAÇÃO */
+
+@keyframes floatCinema{
+    0%{
+        transform:translateY(0px);
+    }
+
+    50%{
+        transform:translateY(-6px);
+    }
+
+    100%{
+        transform:translateY(0px);
+    }
+}
+
+.card:hover{
+    animation:floatCinema 3s ease-in-out infinite;
+}
+
+/* RESPONSIVO */
+
+@media(max-width:768px){
+
+    .hero h1{
+        font-size:1.8rem;
+    }
+
+    .section-title{
+        font-size:1.5rem;
+    }
+
+}
+0
+
