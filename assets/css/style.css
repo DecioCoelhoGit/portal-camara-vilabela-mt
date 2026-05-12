@@ -179,7 +179,7 @@ section {
   min-height: 520px;
   background:
     linear-gradient(rgba(7, 31, 58, 0.82), rgba(7, 31, 58, 0.92)),
-    url("imagens/capa-camara.jpg") center/cover no-repeat;
+    url("../images/dashboard.bg.jpg") center/cover no-repeat;
   color: var(--branco);
   display: flex;
   align-items: center;
