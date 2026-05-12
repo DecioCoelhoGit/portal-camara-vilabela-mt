@@ -870,3 +870,112 @@ FIM BLOCO PREMIUM MASTER V1
 ========================================================= */
 0
 
+/* =========================================================
+V2 CINEMA EXECUTIVO
+========================================================= */
+
+/* HERO CINEMÁTICO */
+
+.hero,
+.banner,
+.topo{
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before,
+.banner::before,
+.topo::before{
+    content:"";
+    position:absolute;
+    inset:0;
+
+    background:
+    linear-gradient(
+    135deg,
+    rgba(255,255,255,0.05),
+    rgba(255,255,255,0)
+    );
+
+    pointer-events:none;
+}
+
+/* GLOW DOURADO */
+
+.btn,
+button{
+    box-shadow:
+    0 0 0 rgba(201,169,59,0);
+}
+
+.btn:hover,
+button:hover{
+    box-shadow:
+    0 0 18px rgba(201,169,59,0.35);
+}
+
+/* EFEITO VIDRO */
+
+.glass,
+.card,
+.quick-card{
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+/* MENU PREMIUM */
+
+nav a{
+    position:relative;
+    transition:all .3s ease;
+}
+
+nav a::after{
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:-4px;
+
+    width:0;
+    height:2px;
+
+    background:#c8a93b;
+    transition:width .3s ease;
+}
+
+nav a:hover::after{
+    width:100%;
+}
+
+/* TÍTULOS MAIS PREMIUM */
+
+h1{
+    font-size:2rem;
+    line-height:1.1;
+}
+
+h2{
+    font-size:1.6rem;
+}
+
+/* SEÇÕES */
+
+section{
+    padding-top:50px;
+    padding-bottom:50px;
+}
+
+/* TRANSIÇÃO GERAL */
+
+*{
+    transition:
+    background .3s ease,
+    color .3s ease,
+    border .3s ease;
+}
+
+/* =========================================================
+FIM V2 CINEMA EXECUTIVO
+========================================================= */
+0
+
