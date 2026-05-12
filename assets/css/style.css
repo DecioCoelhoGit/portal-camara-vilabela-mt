@@ -1182,3 +1182,254 @@ FIM V3 HOLOGRÁFICO
 ========================================================= */
 0
 
+/* =========================================================
+V4 DASHBOARD REAL — GOVTECH EXECUTIVO
+========================================================= */
+
+/* FUNDO EXECUTIVO */
+
+.dashboard-main,
+.dashboard-grid,
+.kpi-grid{
+  position:relative;
+}
+
+/* KPI CARDS */
+
+.kpi-card,
+.resumo-card,
+.indicador-card{
+  background:
+    linear-gradient(180deg,#ffffff,#f7f9fc);
+  border-radius:22px;
+  padding:22px;
+  box-shadow:
+    0 10px 30px rgba(0,0,0,.06),
+    inset 0 1px 0 rgba(255,255,255,.8);
+  transition:.35s ease;
+  overflow:hidden;
+  position:relative;
+}
+
+/* LINHA SUPERIOR PREMIUM */
+
+.kpi-card::before,
+.resumo-card::before,
+.indicador-card::before{
+  content:"";
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:4px;
+  background:
+    linear-gradient(
+      90deg,
+      #d4af37,
+      #54d6ff,
+      #d4af37
+    );
+}
+
+/* HOVER EXECUTIVO */
+
+.kpi-card:hover,
+.resumo-card:hover,
+.indicador-card:hover{
+  transform:
+    translateY(-6px)
+    scale(1.01);
+
+  box-shadow:
+    0 20px 50px rgba(0,0,0,.10),
+    0 0 0 1px rgba(212,175,55,.15);
+}
+
+/* NÚMEROS GRANDES */
+
+.kpi-numero,
+.card-numero,
+.numero-indicador{
+  font-size:2.3rem;
+  font-weight:800;
+  color:#062448;
+  line-height:1;
+  letter-spacing:-1px;
+  margin-top:12px;
+}
+
+/* LABELS */
+
+.kpi-label,
+.card-label{
+  font-size:.82rem;
+  text-transform:uppercase;
+  letter-spacing:1px;
+  color:#6b7a90;
+  font-weight:700;
+}
+
+/* ÍCONES EXECUTIVOS */
+
+.kpi-icon{
+  width:54px;
+  height:54px;
+  border-radius:16px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(212,175,55,.18),
+      rgba(84,214,255,.15)
+    );
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  font-size:1.4rem;
+
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.8),
+    0 8px 20px rgba(0,0,0,.06);
+}
+
+/* DASHBOARD GRID */
+
+.dashboard-grid,
+.kpi-grid{
+  display:grid;
+  grid-template-columns:
+    repeat(auto-fit,minmax(220px,1fr));
+  gap:20px;
+}
+
+/* BARRA EXECUTIVA */
+
+.dashboard-header{
+  background:
+    linear-gradient(
+      135deg,
+      #062448,
+      #0d3769
+    );
+
+  border-radius:28px;
+
+  padding:28px;
+
+  color:#fff;
+
+  box-shadow:
+    0 20px 60px rgba(0,0,0,.18);
+
+  position:relative;
+  overflow:hidden;
+}
+
+/* BRILHO INTERNO */
+
+.dashboard-header::after{
+  content:"";
+  position:absolute;
+  inset:-40%;
+  background:
+    radial-gradient(circle, rgba(255,255,255,.12), transparent 35%);
+  animation:
+    dashboardGlow 10s linear infinite;
+}
+
+@keyframes dashboardGlow{
+  0%{ transform:translateX(-10%); }
+  50%{ transform:translateX(10%); }
+  100%{ transform:translateX(-10%); }
+}
+
+/* TABELAS PREMIUM */
+
+table{
+  border-collapse:collapse;
+  overflow:hidden;
+  border-radius:18px;
+  width:100%;
+  background:#fff;
+}
+
+table thead{
+  background:
+    linear-gradient(
+      135deg,
+      #062448,
+      #0d3769
+    );
+
+  color:#fff;
+}
+
+table th,
+table td{
+  padding:14px;
+  border-bottom:
+    1px solid rgba(0,0,0,.05);
+}
+
+table tr:hover{
+  background:
+    rgba(84,214,255,.05);
+}
+
+/* CARDS LEGISLATIVOS */
+
+.sessao-card,
+.projeto-card,
+.transparencia-card{
+  position:relative;
+  overflow:hidden;
+}
+
+/* BADGE STATUS */
+
+.status{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+
+  padding:8px 14px;
+
+  border-radius:999px;
+
+  font-size:.74rem;
+  font-weight:700;
+
+  background:
+    rgba(15,95,74,.10);
+
+  color:#0f5f4a;
+}
+
+/* DASHBOARD MOBILE */
+
+@media(max-width:768px){
+
+  .kpi-numero,
+  .card-numero,
+  .numero-indicador{
+    font-size:1.8rem;
+  }
+
+  .dashboard-header{
+    padding:22px;
+    border-radius:22px;
+  }
+
+  .dashboard-grid,
+  .kpi-grid{
+    gap:14px;
+  }
+}
+
+/* =========================================================
+FIM V4 DASHBOARD REAL
+========================================================= */
+0
+
