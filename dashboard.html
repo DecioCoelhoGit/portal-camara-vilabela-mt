@@ -17,6 +17,8 @@
 <meta property="og:title" content="Portal Câmara Vila Bela MT">
 <meta property="og:description" content="Portal institucional da Câmara Municipal de Vila Bela da Santíssima Trindade - MT">
 <meta property="og:image" content="assets/images/portal-camara-og.jpg">
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 
 <body>
@@ -262,6 +264,36 @@ if ("serviceWorker" in navigator) {
       <div class="kpi-card">
         <span class="kpi-label">Taxa de Transparência</span>
         <strong id="olap-transparencia" class="kpi-numero">0%</strong>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <span class="badge">BI Legislativo</span>
+    <h2>Charts Executivos</h2>
+    <p>Indicadores visuais da atividade legislativa, transparência e gestão parlamentar.</p>
+
+    <div class="dashboard-grid">
+      <div class="kpi-card">
+        <h3>Projetos por Status</h3>
+        <canvas id="chartProjetosStatus"></canvas>
+      </div>
+
+      <div class="kpi-card">
+        <h3>Sessões Legislativas</h3>
+        <canvas id="chartSessoes"></canvas>
+      </div>
+
+      <div class="kpi-card">
+        <h3>Transparência</h3>
+        <canvas id="chartTransparencia"></canvas>
+      </div>
+
+      <div class="kpi-card">
+        <h3>Resumo Geral</h3>
+        <canvas id="chartResumoGeral"></canvas>
       </div>
     </div>
   </div>
