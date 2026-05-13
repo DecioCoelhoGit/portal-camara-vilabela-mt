@@ -386,3 +386,64 @@ document.addEventListener("DOMContentLoaded", function () {
 /* =========================================================
    FIM DO SCRIPT.JS V2
 ========================================================= */
+/* =========================================================
+   V6 DASHBOARD OLAP REAL — GOVTECH
+========================================================= */
+
+function calcularOLAP() {
+  const vereadores = carregarDados(STORAGE_KEYS.vereadores, vereadoresSeed);
+  const projetos = carregarDados(STORAGE_KEYS.projetos, projetosSeed);
+  const sessoes = carregarDados(STORAGE_KEYS.sessoes, sessoesSeed);
+  const documentos = carregarDados(STORAGE_KEYS.documentos, documentosSeed);
+
+  const projetosEmTramitacao = projetos.filter(p =>
+    String(p.status).toLowerCase().includes("tramitação")
+  ).length;
+
+  const projetosPublicados = projetos.filter(p =>
+    String(p.status).toLowerCase().includes("public")
+  ).length;
+
+  const sessoesPublicadas = sessoes.filter(s =>
+    String(s.status).toLowerCase().includes("public")
+  ).length;
+
+  const documentosPublicados = documentos.filter(d =>
+    String(d.status).toLowerCase().includes("public")
+  ).length;
+
+  return {
+    vereadores: vereadores.length,
+    projetos: projetos.length,
+    sessoes: sessoes.length,
+    documentos: documentos.length,
+    projetosEmTramitacao,
+    projetosPublicados,
+    sessoesPublicadas,
+    documentosPublicados,
+    taxaPublicacao:
+      documentos.length > 0
+        ? Math.round((documentosPublicados / documentos.length) * 100)
+        : 0
+  };
+}
+
+function renderOLAP() {
+  const olap = calcularOLAP();
+
+  atualizarTexto("olap-vereadores", olap.vereadores);
+  atualizarTexto("olap-projetos", olap.projetos);
+  atualizarTexto("olap-sessoes", olap.sessoes);
+  atualizarTexto("olap-documentos", olap.documentos);
+  atualizarTexto("olap-tramitacao", olap.projetosEmTramitacao);
+  atualizarTexto("olap-publicados", olap.projetosPublicados);
+  atualizarTexto("olap-sessoes-publicadas", olap.sessoesPublicadas);
+  atualizarTexto("olap-transparencia", olap.taxaPublicacao + "%");
+}
+
+/* Integra OLAP ao carregamento geral */
+document.addEventListener("DOMContentLoaded", function () {
+  setTimeout(renderOLAP, 300);
+});
+0
+
