@@ -46,16 +46,6 @@
   ====================================================== -->
   <div class="dashboard-layout">
 
-    <aside class="sidebar">
-      <h2>Dashboard Câmara</h2>
-      <a href="index.html">← Voltar ao Portal</a>
-      <a href="dashboard.html">Visão Geral</a>
-      <a href="vereadores.html">Vereadores</a>
-      <a href="sessoes.html">Sessões</a>
-      <a href="projetos.html">Projetos</a>
-      <a href="transparencia.html">Transparência</a>
-      <a href="admin.html">Admin</a>
-    </aside>
 
     <main class="dashboard-main">
 
@@ -367,7 +357,7 @@ function criarGraficoPizza(id, labels, dados) {
 function criarGraficoBarra(id, labels, dados) {
   const el = document.getElementById(id);
   if (!el) return;
-
+7
   new Chart(el, {
     type: "bar",
     data: {

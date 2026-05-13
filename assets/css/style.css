@@ -1811,3 +1811,12 @@ header nav a {
 }
 
 
+@media (max-width: 768px) {
+  .hero h1,
+  .hero-title {
+    font-size: clamp(2.3rem, 12vw, 4.2rem) !important;
+    line-height: 1.05 !important;
+  }
+}
+
+
