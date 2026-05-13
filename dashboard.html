@@ -306,3 +306,117 @@ if ("serviceWorker" in navigator) {
 
 <button onclick="exportarJSON()" class="btn btn-primary">Exportar JSON</button>
 <button onclick="resetarBase()" class="btn btn-primary">Resetar Base</button>
+* =========================================================
+   V7 CHARTS EXECUTIVOS — GOVTECH
+========================================================= */
+
+function contarPorStatus(lista) {
+  const mapa = {};
+
+  lista.forEach(item => {
+    const status = item.status || "Não informado";
+    mapa[status] = (mapa[status] || 0) + 1;
+  });
+
+  return mapa;
+}
+
+function criarGraficoPizza(id, labels, dados) {
+  const el = document.getElementById(id);
+  if (!el) return;
+
+  new Chart(el, {
+    type: "doughnut",
+    data: {
+      labels: labels,
+      datasets: [{
+        data: dados
+      }]
+    },
+    options: {
+      responsive: true,
+      plugins: {
+        legend: {
+          position: "bottom"
+        }
+      }
+    }
+  });
+}
+
+function criarGraficoBarra(id, labels, dados) {
+  const el = document.getElementById(id);
+  if (!el) return;
+
+  new Chart(el, {
+    type: "bar",
+    data: {
+      labels: labels,
+      datasets: [{
+        label: "Quantidade",
+        data: dados
+      }]
+    },
+    options: {
+      responsive: true,
+      plugins: {
+        legend: {
+          display: false
+        }
+      },
+      scales: {
+        y: {
+          beginAtZero: true
+        }
+      }
+    }
+  });
+}
+
+function renderChartsExecutivos() {
+  if (typeof Chart === "undefined") return;
+
+  const vereadores = carregarDados(STORAGE_KEYS.vereadores, vereadoresSeed);
+  const projetos = carregarDados(STORAGE_KEYS.projetos, projetosSeed);
+  const sessoes = carregarDados(STORAGE_KEYS.sessoes, sessoesSeed);
+  const documentos = carregarDados(STORAGE_KEYS.documentos, documentosSeed);
+
+  const projetosStatus = contarPorStatus(projetos);
+  const sessoesStatus = contarPorStatus(sessoes);
+  const documentosStatus = contarPorStatus(documentos);
+
+  criarGraficoPizza(
+    "chartProjetosStatus",
+    Object.keys(projetosStatus),
+    Object.values(projetosStatus)
+  );
+
+  criarGraficoBarra(
+    "chartSessoes",
+    Object.keys(sessoesStatus),
+    Object.values(sessoesStatus)
+  );
+
+  criarGraficoPizza(
+    "chartTransparencia",
+    Object.keys(documentosStatus),
+    Object.values(documentosStatus)
+  );
+
+  criarGraficoBarra(
+    "chartResumoGeral",
+    ["Vereadores", "Projetos", "Sessões", "Documentos"],
+    [
+      vereadores.length,
+      projetos.length,
+      sessoes.length,
+      documentos.length
+    ]
+  );
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+  setTimeout(renderChartsExecutivos, 500);
+});
+0
+
