@@ -207,8 +207,6 @@
   
 <script src="assets/js/script.js"></script>
 
-<script src="assets/js/script.js"></script>
-
 <script>
 if ("serviceWorker" in navigator) {
   navigator.serviceWorker.register("./sw.js");
@@ -216,6 +214,58 @@ if ("serviceWorker" in navigator) {
 </script>
 </body>
 </html>
+
+<section class="section">
+  <div class="container">
+    <span class="badge">Cubo OLAP Legislativo</span>
+    <h2>Dashboard OLAP Real</h2>
+    <p>
+      Visão multidimensional dos dados legislativos, administrativos e de transparência.
+    </p>
+
+    <div class="dashboard-grid">
+      <div class="kpi-card">
+        <span class="kpi-label">Vereadores</span>
+        <strong id="olap-vereadores" class="kpi-numero">0</strong>
+      </div>
+
+      <div class="kpi-card">
+        <span class="kpi-label">Projetos</span>
+        <strong id="olap-projetos" class="kpi-numero">0</strong>
+      </div>
+
+      <div class="kpi-card">
+        <span class="kpi-label">Sessões</span>
+        <strong id="olap-sessoes" class="kpi-numero">0</strong>
+      </div>
+
+      <div class="kpi-card">
+        <span class="kpi-label">Documentos</span>
+        <strong id="olap-documentos" class="kpi-numero">0</strong>
+      </div>
+
+      <div class="kpi-card">
+        <span class="kpi-label">Em Tramitação</span>
+        <strong id="olap-tramitacao" class="kpi-numero">0</strong>
+      </div>
+
+      <div class="kpi-card">
+        <span class="kpi-label">Projetos Publicados</span>
+        <strong id="olap-publicados" class="kpi-numero">0</strong>
+      </div>
+
+      <div class="kpi-card">
+        <span class="kpi-label">Sessões Publicadas</span>
+        <strong id="olap-sessoes-publicadas" class="kpi-numero">0</strong>
+      </div>
+
+      <div class="kpi-card">
+        <span class="kpi-label">Taxa de Transparência</span>
+        <strong id="olap-transparencia" class="kpi-numero">0%</strong>
+      </div>
+    </div>
+  </div>
+</section>
 
 <input id="filtro-vereadores" type="text" placeholder="Filtrar vereadores..." />
 <input id="filtro-projetos" type="text" placeholder="Filtrar projetos..." />
