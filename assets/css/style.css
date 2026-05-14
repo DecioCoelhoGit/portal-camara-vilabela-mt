@@ -1871,3 +1871,87 @@ header nav a {
 }
 
 
+/* FIX DEFINITIVO MOBILE — HEADER LIMPO */
+
+@media (max-width: 768px) {
+  header,
+  .site-header {
+    position: relative !important;
+    padding: 14px 16px !important;
+    min-height: auto !important;
+    overflow: visible !important;
+  }
+
+  header .container,
+  .site-header .container {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 10px !important;
+    text-align: center !important;
+  }
+
+  header img,
+  .site-header img {
+    width: 64px !important;
+    height: auto !important;
+    margin: 0 auto !important;
+    display: block !important;
+  }
+
+  header h1,
+  header h2,
+  header .logo-text,
+  header .brand-text,
+  .site-header h1,
+  .site-header h2 {
+    font-size: 1rem !important;
+    line-height: 1.25 !important;
+    margin: 0 !important;
+    max-width: 100% !important;
+    white-space: normal !important;
+    word-break: normal !important;
+  }
+
+  header nav,
+  .site-header nav {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    gap: 8px !important;
+    width: 100% !important;
+    margin-top: 8px !important;
+  }
+
+  header nav a,
+  .site-header nav a {
+    font-size: .82rem !important;
+    padding: 7px 10px !important;
+    white-space: nowrap !important;
+  }
+
+  .hero,
+  .hero-section,
+  .banner,
+  main section:first-of-type {
+    padding-top: 42px !important;
+  }
+
+  .hero h1,
+  .hero-title {
+    font-size: 2.35rem !important;
+    line-height: 1.08 !important;
+    margin-top: 0 !important;
+  }
+
+  .dashboard-grid,
+  .cards-grid,
+  .stats-grid,
+  .charts-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+0
+
