@@ -1955,3 +1955,74 @@ header nav a {
 
 0
 
+/* FIX FINAL — REMOVER OVERFLOW E AJUSTAR MOBILE */
+
+html, body {
+  max-width: 100%;
+  overflow-x: hidden !important;
+}
+
+* {
+  max-width: 100%;
+}
+
+@media (max-width: 768px) {
+  .container,
+  main,
+  section,
+  .card,
+  .dashboard-card,
+  .chart-card,
+  .table-wrap,
+  table,
+  canvas {
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+  }
+
+  .site-header .container,
+  header .container {
+    display: grid !important;
+    grid-template-columns: 70px 1fr !important;
+    gap: 12px !important;
+    align-items: center !important;
+    text-align: left !important;
+  }
+
+  .site-header nav,
+  header nav {
+    grid-column: 1 / -1 !important;
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 8px !important;
+  }
+
+  .site-header nav a,
+  header nav a {
+    text-align: center !important;
+    font-size: 0.82rem !important;
+  }
+
+  .hero h1,
+  .hero-title {
+    font-size: 2rem !important;
+  }
+
+  .hero p,
+  .hero-description {
+    font-size: 1rem !important;
+    line-height: 1.7 !important;
+  }
+
+  .dashboard-grid,
+  .stats-grid,
+  .cards-grid,
+  .charts-grid {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
+}
+
+0
+
